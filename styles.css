@@ -7,8 +7,20 @@ body {
     width: 100px;
     height: 100px;
 }
+
+.buttonPink {
+    width: 100px;
+    height: 100px;
+}
+
 .square {
     border: 1px solid blue;
+    box-sizing: border-box;
+    flex: 0 0 calc(100% / 16);
+}
+
+.squarePink {
+    border: 1px solid pink;
     box-sizing: border-box;
     flex: 0 0 calc(100% / 16);
 }

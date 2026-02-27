@@ -5,13 +5,13 @@ gridContainer.addEventListener("mousedown", draw)
 
 function draw() {
     let isDrawing = false;
-
     gridContainer.addEventListener("mousedown", (e) => {
-        isDrawing = true;
-
-        if (e.target.classList.contains("square")) {
+        if (e.button === 0) {
+            isDrawing = true;
+            if (e.target.classList.contains("square")) {
                 e.target.style.backgroundColor = "orange";
             }
+        }
     })
 
     gridContainer.addEventListener("mouseover", (e) => {
@@ -20,9 +20,12 @@ function draw() {
         }
     });
 
-    window.addEventListener("mouseup", () => {
+    const stopDrawing = () => {
         isDrawing = false;
-    });
+    };
+
+    window.addEventListener("mouseup", stopDrawing);
+    window.addEventListener("blur", stopDrawing)
 }
 
 button.addEventListener("click", createGrid);

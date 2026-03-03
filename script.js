@@ -35,7 +35,7 @@ button.addEventListener("click", createGrid);
 function createGrid() {
     gridContainer.innerHTML = "";
 
-    const size = 16;
+    const sizeX = prompt()
 
     for (let i = 0; i < size * size; i++) {
         let newDiv = document.createElement("div");

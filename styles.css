@@ -9,9 +9,9 @@ body {
 }
 
 .square {
-    border: 1px solid blue;
+    border: 1px solid black;
     box-sizing: border-box;
-    flex: 0 0 calc(100% / 16);
+    flex: 0 0 calc(100% / 100);
 }
 
 #gridContainer {

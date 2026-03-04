@@ -13,8 +13,9 @@ gridContainer.addEventListener("mousedown", (e) => {
     }
 });
 
+let isDrawing = false;
+
 function draw() {
-    let isDrawing = false;
     gridContainer.addEventListener("mousedown", (e) => {
         if (e.button === 0) {
             isDrawing = true;

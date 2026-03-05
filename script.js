@@ -14,20 +14,27 @@ gridContainer.addEventListener("mousedown", (e) => {
 });
 
 let isDrawing = false;
+function randColorNum() {
+    return Math.floor(Math.random() * 256);
+}
+
+function randomRGB() {
+    return `rgb(${randColorNum()},${randColorNum()},${randColorNum()})`;
+}
 
 function draw() {
     gridContainer.addEventListener("mousedown", (e) => {
         if (e.button === 0) {
             isDrawing = true;
             if (e.target.classList.contains("square")) {
-                e.target.style.backgroundColor = "orange";
+                e.target.style.backgroundColor = randomRGB();
             }
         }
     })
 
     gridContainer.addEventListener("mouseover", (e) => {
         if (isDrawing && e.target.classList.contains("square")) {
-            e.target.style.backgroundColor = "orange";
+            e.target.style.backgroundColor = randomRGB();
         }
     });
 
@@ -40,8 +47,6 @@ function draw() {
 }
 
 button.addEventListener("click", createGrid);
-
-
 
 function createGrid() {
     gridContainer.innerHTML = "";

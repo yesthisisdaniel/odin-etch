@@ -10,7 +10,14 @@ body {
     padding: 10px;
 }
 
-.button {
+#gridButton {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.colorOptionButton {
     width: 100px;
     height: 100px;
     margin-right: 15px;

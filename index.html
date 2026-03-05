@@ -8,15 +8,25 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-  <div id="pageTitle">
+    <div id="pageTitle">
       <h1>Etch-a-Sketch!</h1>
-  </div>
-  <div id="gridAndButtonContainer">
-    <button id="blackColor" class="colorOptionButton">Choose me to draw in black!</button>
-    <button id="rainbowColor" class="colorOptionButton" class>Choose me to draw in a rainbow!</button>
-    <button id ="gridButton">Click me to input what size grid you want to make!</button>
-    <div id="gridContainer"></div>
-  </div>
+    </div>
+    <div id="mainContainer">
+      <div id=buttonSidebar>
+        <div class="buttonRow" id="gridButtonRow">
+          <button id ="gridButton">Click me to input what size grid you want to make!</button>
+        </div>
+        <div class="buttonRow">
+          <button id="blackColor" class="colorOptionButton">Choose me to draw in black!</button>
+          <button id="rainbowColor" class="colorOptionButton" class>Choose me to draw in a rainbow!</button>
+          <button id="clearButton">Clear</button>
+        </div>
+      </div>
+      
+      <div id="gridContainer"></div>
+    </div>
+  
+  
     <script src="script.js"></script>
   </body>
 </html>

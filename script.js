@@ -10,7 +10,6 @@ const darkeningButton = document.querySelector("#darkeningButton");
 let isDrawing = false; // needs to be declared once and on top of code for global scope
 let drawingColor = "black"; // default will always be black
 let colorDarkeningState = false;
-let colorOpacity = 10;
 
 function randomColorNum() {
     return Math.floor(Math.random() * 256);
@@ -43,7 +42,7 @@ gridContainer.addEventListener("mousedown", (e) => {
         if (e.target.classList.contains("square")) {
             if (colorDarkeningState === true) {
             e.target.style.backgroundColor = getColor();
-            e.target.style.opacity = 0.1;
+            c
             }
             else {
             e.target.style.backgroundColor = getColor();

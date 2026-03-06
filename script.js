@@ -25,7 +25,9 @@ function getColor() {
     else if (drawingColor === "eraser") {
         return "white";
     }
-    return "black";
+    else {
+        return "black";
+    }
 }
 
 gridContainer.addEventListener("mousedown", (e) => {
@@ -55,6 +57,11 @@ blackButton.addEventListener("click", () => {
 rainbowButton.addEventListener("click", () => {
     drawingColor = "rainbow";
 });
+
+eraserButton.addEventListener("click", () => {
+    drawingColor = "eraser";
+}
+)
 
 gridButton.addEventListener("click", createGrid);
 

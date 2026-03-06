@@ -3,6 +3,7 @@ const gridButton = document.querySelector("#gridButton");
 const rainbowButton = document.querySelector("#rainbowColor");
 const blackButton = document.querySelector("#blackColor");
 const clearButton = document.querySelector("#clearButton");
+const eraserButton = document.querySelector("#eraserButton")
 
 
 let isDrawing = false; // needs to be declared once and on top of code for global scope

@@ -28,12 +28,20 @@ body {
     font-size: 20px;
 }
 
-.buttonRow {
-    display: flex;
-}
-
 #gridButtonRow {
     justify-content: center;
+}
+
+#eraserButtonRow {
+    justify-content: center;
+}
+#eraserButton {
+    width: 275px;
+    height: 75px;
+}
+
+.buttonRow {
+    display: flex;
 }
 
 .colorOptionButton {

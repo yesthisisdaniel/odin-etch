@@ -80,6 +80,10 @@ body {
     margin-left: 15px;
 }
 
+#darkeningColor {
+    font-size: 10px;
+}
+
 .square {
     box-sizing: border-box;
     flex: 0 0 calc(100% / 100);

@@ -106,5 +106,9 @@ function createGrid() {
 
 clearButton.addEventListener("click", clearGrid);
 function clearGrid() {
-    gridContainer.innerHTML = "";
+    const squares = document.querySelectorAll(".square");
+    squares.forEach(square => {
+        square.style.backgroundColor = "white"; 
+        square.style.opacity = 1; 
+    });
 }

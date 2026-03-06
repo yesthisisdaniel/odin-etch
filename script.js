@@ -8,7 +8,7 @@ const darkeningButton = document.querySelector("#darkeningButton");
 
 
 let isDrawing = false; // needs to be declared once and on top of code for global scope
-let drawingColor = "black"; // default will always be black
+let drawingColor = "black"; // default upon reload will always be black
 let colorDarkeningState = false;
 currentOpacity = "";
 

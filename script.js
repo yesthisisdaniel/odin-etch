@@ -53,11 +53,14 @@ gridContainer.addEventListener("mousedown", (e) => {
 });
 
 gridContainer.addEventListener("mouseover", (e) => {
-    if (colorDarkeningState === true) {
-        e.target.style.opacity = 0.1;
-    }
     if (isDrawing && e.target.classList.contains("square")) {
-        e.target.style.backgroundColor = getColor();
+        if (colorDarkeningState === true) {
+            e.target.style.backgroundColor = getColor();
+            e.target.style.opacity = 0.1;
+        }
+        else {
+            e.target.style.backgroundColor = getColor();
+        }
     }
 });
 

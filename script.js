@@ -10,6 +10,7 @@ const darkeningButton = document.querySelector("#darkeningButton");
 let isDrawing = false; // needs to be declared once and on top of code for global scope
 let drawingColor = "black"; // default will always be black
 let colorDarkeningState = false;
+currentOpacity = "";
 
 function randomColorNum() {
     return Math.floor(Math.random() * 256);
@@ -39,12 +40,16 @@ gridContainer.addEventListener("mousedown", (e) => {
     e.preventDefault(); 
     if (e.button === 0) { // 0 is the code for left click
         isDrawing = true;
-        if (e.target.classList.contains("square")) {
+         if (isDrawing && e.target.classList.contains("square")) {
             if (colorDarkeningState === true) {
-            e.target.style.backgroundColor = getColor();
-            c
-            }
-            else {
+                e.target.style.backgroundColor = getColor();
+                let currentOpacity = Number(e.target.style.opacity);
+            if (currentOpacity < 1) {
+                e.target.style.opacity = currentOpacity + 0.1;
+                }
+            }    
+        else {
+            e.target.style.opacity = 1;
             e.target.style.backgroundColor = getColor();
             }
         }
@@ -55,9 +60,13 @@ gridContainer.addEventListener("mouseover", (e) => {
     if (isDrawing && e.target.classList.contains("square")) {
         if (colorDarkeningState === true) {
             e.target.style.backgroundColor = getColor();
-            e.target.style.opacity = 0.1;
-        }
+            let currentOpacity = Number(e.target.style.opacity);
+            if (currentOpacity < 1) {
+                e.target.style.opacity = currentOpacity + 0.1;
+            }
+        } 
         else {
+            e.target.style.opacity = 1;
             e.target.style.backgroundColor = getColor();
         }
     }
@@ -82,8 +91,8 @@ eraserButton.addEventListener("click", () => {
 
 darkeningButton.addEventListener("click", (e) => {
     if (e.button === 0) {
-        colorDarkeningState = true;
-        console.log(colorDarkeningState)
+        colorDarkeningState = !colorDarkeningState;
+        darkeningButton.style.backgroundColor = colorDarkeningState ? "gray" : "";
     }
 })
 
@@ -109,6 +118,6 @@ function clearGrid() {
     const squares = document.querySelectorAll(".square");
     squares.forEach(square => {
         square.style.backgroundColor = "white"; 
-        square.style.opacity = 1; 
+        square.style.opacity = ""; 
     });
 }

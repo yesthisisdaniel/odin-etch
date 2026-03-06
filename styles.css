@@ -38,6 +38,7 @@ body {
 #eraserButton {
     width: 275px;
     height: 75px;
+    font-size: 30px;
 }
 
 .buttonRow {
@@ -49,11 +50,11 @@ body {
     height: 50px;
     margin-right: 15px;
     margin-left: 15px;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 #rainbowColor {
-    font-size: 12px;
+    font-size: 15px;
     text-shadow: 2px 2px 4px #000000;
     animation: rainbow 20s infinite; 
     font-weight: bold;
@@ -81,7 +82,7 @@ body {
 }
 
 #darkeningButton {
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .square {

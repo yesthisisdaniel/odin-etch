@@ -3,11 +3,14 @@ const gridButton = document.querySelector("#gridButton");
 const rainbowButton = document.querySelector("#rainbowColor");
 const blackButton = document.querySelector("#blackColor");
 const clearButton = document.querySelector("#clearButton");
-const eraserButton = document.querySelector("#eraserButton")
+const eraserButton = document.querySelector("#eraserButton");
+const darkeningButton = document.querySelector("#darkeningButton");
 
 
 let isDrawing = false; // needs to be declared once and on top of code for global scope
 let drawingColor = "black"; // default will always be black
+let colorDarkeningState = false;
+let colorOpacity = 10;
 
 function randomColorNum() {
     return Math.floor(Math.random() * 256);
@@ -15,6 +18,9 @@ function randomColorNum() {
 
 function randomRGB() {
     return `rgb(${randomColorNum()},${randomColorNum()},${randomColorNum()})`;
+}
+function colorDarkening() {
+    
 }
 
 // This function acts as a "switchboard"
@@ -32,15 +38,24 @@ function getColor() {
 
 gridContainer.addEventListener("mousedown", (e) => {
     e.preventDefault(); 
-    if (e.button === 0) { // 0 is the code fo left click
+    if (e.button === 0) { // 0 is the code for left click
         isDrawing = true;
         if (e.target.classList.contains("square")) {
+            if (colorDarkeningState === true) {
             e.target.style.backgroundColor = getColor();
+            e.target.style.opacity = 0.1;
+            }
+            else {
+            e.target.style.backgroundColor = getColor();
+            }
         }
     }
 });
 
 gridContainer.addEventListener("mouseover", (e) => {
+    if (colorDarkeningState === true) {
+        e.target.style.opacity = 0.1;
+    }
     if (isDrawing && e.target.classList.contains("square")) {
         e.target.style.backgroundColor = getColor();
     }
@@ -62,6 +77,13 @@ eraserButton.addEventListener("click", () => {
     drawingColor = "eraser";
 }
 )
+
+darkeningButton.addEventListener("click", (e) => {
+    if (e.button === 0) {
+        colorDarkeningState = true;
+        console.log(colorDarkeningState)
+    }
+})
 
 gridButton.addEventListener("click", createGrid);
 
